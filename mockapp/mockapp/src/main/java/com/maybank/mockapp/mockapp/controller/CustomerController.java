@@ -1,0 +1,34 @@
+package com.maybank.mockapp.mockapp.controller;
+
+import com.maybank.mockapp.mockapp.dto.CustomerDTO;
+import com.maybank.mockapp.mockapp.entity.Customer;
+import com.maybank.mockapp.mockapp.exception.CustomerNotFoundException;
+import com.maybank.mockapp.mockapp.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
+
+@RestController
+@RequestMapping("/customer/api")
+public class CustomerController {
+
+    @Autowired
+    private CustomerService customerService;
+
+    @PostMapping("/create")
+    public ResponseEntity<CustomerDTO> createCustomer(@RequestBody CustomerDTO customerDTO) {
+        CustomerDTO customer=customerService.createCustomer(customerDTO.getName());
+        return ResponseEntity.status(HttpStatus.CREATED).body(customer);
+    }
+
+    @GetMapping("/customers/{id}")
+    public ResponseEntity<CustomerDTO> getCustomer(@PathVariable Long id) throws CustomerNotFoundException {
+        CustomerDTO customer = customerService.inquireCustomer(id);
+        return ResponseEntity.ok(customer);
+    }
+
+
+}

@@ -1,0 +1,29 @@
+package com.maybank.mockapp.mockapp.service;
+
+import com.maybank.mockapp.mockapp.dto.CustomerDTO;
+import com.maybank.mockapp.mockapp.entity.Customer;
+import com.maybank.mockapp.mockapp.exception.CustomerNotFoundException;
+import com.maybank.mockapp.mockapp.repository.AccountRepository;
+import com.maybank.mockapp.mockapp.repository.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CustomerService {
+
+    @Autowired
+    private CustomerRepository customerRepo;
+
+    public CustomerDTO createCustomer(String name) {
+        Customer customer = new Customer();
+        customer.setName(name);
+        customer = customerRepo.save(customer);
+        return new CustomerDTO(customer.getId(), customer.getName());
+    }
+
+    public Customer inquireCustomer(Long id) throws CustomerNotFoundException {
+        Customer customer = customerRepo.findById(id)
+                .orElseThrow(() -> new CustomerNotFoundException(id));
+        return new CustomerDTO(customer.getId(), customer.getName());
+    }
+}
