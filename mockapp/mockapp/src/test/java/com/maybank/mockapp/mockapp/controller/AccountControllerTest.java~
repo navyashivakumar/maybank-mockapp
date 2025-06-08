@@ -1,0 +1,120 @@
+package com.maybank.mockapp.mockapp.controller;
+
+import com.maybank.mockapp.mockapp.dto.AccountDTO;
+import com.maybank.mockapp.mockapp.exception.AccountNotFoundException;
+import com.maybank.mockapp.mockapp.service.AccountService;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.test.util.ReflectionTestUtils;
+import jakarta.transaction.InvalidTransactionException;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+public class AccountControllerTest {
+
+    private AccountService accountService;
+    private AccountController accountController;
+
+    @BeforeEach
+    void setUp() {
+        accountService = Mockito.mock(AccountService.class);
+        accountController = new AccountController(); // since no constructor, create empty instance
+        ReflectionTestUtils.setField(accountController, "service", accountService);
+    }
+
+    @Test
+    void testCreateAccount() throws Exception {
+        Long customerId = 1L;
+        String type = "Savings";
+        AccountDTO account = new AccountDTO(1001L, "Savings", "Active", 0.0, customerId);
+        when(accountService.createAccount(customerId, type)).thenReturn(account);
+        ResponseEntity<AccountDTO> response = accountController.createAccount(customerId, type);
+        assertEquals(HttpStatus.CREATED, response.getStatusCode());
+        assertEquals(account.getAccountNumber(), response.getBody().getAccountNumber());
+    }
+
+    @Test
+    void testDeposit() throws Exception {
+        Long accountNumber = 1001L;
+        double amount = 500.0;
+        AccountDTO dto = new AccountDTO(accountNumber, "Savings", "Active", 500.0, 1L);
+        when(accountService.depositCash(accountNumber, amount)).thenReturn(dto);
+        ResponseEntity<AccountDTO> response = accountController.deposit(accountNumber, amount);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(500.0, response.getBody().getBalance());
+    }
+
+    @Test
+    public void testWithdraw_success() throws Exception {
+        Long accountNumber = 1L;
+        double amount = 100.0;
+        AccountDTO mockResponse = new AccountDTO(accountNumber, "SAVINGS", "Active", 900.0, 1L);
+        when(accountService.withdrawCash(accountNumber, amount)).thenReturn(mockResponse);
+        ResponseEntity<AccountDTO> response = accountController.withdraw(accountNumber, amount);
+        assertEquals(200, response.getStatusCodeValue());
+        assertEquals(mockResponse, response.getBody());
+    }
+
+    @Test
+    public void testWithdraw_accountNotFound() throws Exception {
+        Long accountNumber = 99L;
+        double amount = 100.0;
+        when(accountService.withdrawCash(accountNumber, amount)).thenThrow(new AccountNotFoundException(accountNumber));
+        assertThrows(AccountNotFoundException.class, () -> {
+            accountController.withdraw(accountNumber, amount);
+        });
+    }
+
+    @Test
+    public void testWithdraw_insufficientBalance() throws Exception {
+        Long accountNumber = 1L;
+        double amount = 1000.0;
+        when(accountService.withdrawCash(accountNumber, amount)).thenThrow(new InvalidTransactionException("Insufficient funds"));
+        assertThrows(InvalidTransactionException.class, () -> {
+            accountController.withdraw(accountNumber, amount);
+        });
+    }
+
+    @Test
+    public void testCloseAccount_success() throws Exception {
+        Long accountNumber = 1L;
+        AccountDTO mockResponse = new AccountDTO(accountNumber, "SAVINGS", "Closed", 0.0, 1L);
+        when(accountService.closeAccount(accountNumber)).thenReturn(mockResponse);
+        ResponseEntity<AccountDTO> response = accountController.closeAccount(accountNumber);
+        assertEquals(200, response.getStatusCodeValue());
+        assertEquals("Closed", response.getBody().getStatus());
+    }
+
+    @Test
+    public void testCloseAccount_accountNotFound() throws Exception {
+        Long accountNumber = 99L;
+        when(accountService.closeAccount(accountNumber)).thenThrow(new AccountNotFoundException(accountNumber));
+        assertThrows(AccountNotFoundException.class, () -> {
+            accountController.closeAccount(accountNumber);
+        });
+    }
+
+    @Test
+    public void testInquireAccount_success() throws Exception {
+        Long accountNumber = 1L;
+        AccountDTO mockResponse = new AccountDTO(accountNumber, "SAVINGS", "Active", 1000.0, 1L);
+        when(accountService.inquireAccount(accountNumber)).thenReturn(mockResponse);
+        ResponseEntity<AccountDTO> response = accountController.getAccount(accountNumber);
+        assertEquals(200, response.getStatusCodeValue());
+        assertEquals(mockResponse, response.getBody());
+    }
+
+    @Test
+    public void testInquireAccount_accountNotFound() throws Exception {
+        Long accountNumber = 99L;
+        when(accountService.inquireAccount(accountNumber)).thenThrow(new AccountNotFoundException(accountNumber));
+        assertThrows(AccountNotFoundException.class, () -> {
+            accountController.getAccount(accountNumber);
+        });
+    }
+
+}
