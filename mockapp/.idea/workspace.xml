@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6f3a08c4-6a27-4f1a-b76a-c5c85f384409" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2yB0AFnea4tt2lxUQ45VIk5BLQ0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MockappApplication.executor": "Run",
+    "JUnit.AccountControllerTest.executor": "Coverage",
+    "JUnit.AccountServiceIntegrationTest.executor": "Run",
+    "JUnit.AccountServiceTest.executor": "Run",
+    "JUnit.AccountServiceTest.testInquireAccount_Success.executor": "Coverage",
+    "JUnit.CustomerControllerTest.executor": "Coverage",
+    "JUnit.CustomerServiceIntegrationTest.executor": "Coverage",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.MockappApplication.executor": "Run",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/navyas/maybank-mockapp/mockapp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\navyas\mockapp\mockapp\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.maybank.mockapp.mockapp.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MockappApplication">
+    <configuration name="AccountControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mockapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.maybank.mockapp.mockapp.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.maybank.mockapp.mockapp.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.maybank.mockapp.mockapp.controller.AccountControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mockapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.maybank.mockapp.mockapp.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.maybank.mockapp.mockapp.service" />
+      <option name="MAIN_CLASS_NAME" value="com.maybank.mockapp.mockapp.service.AccountServiceIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mockapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.maybank.mockapp.mockapp.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.maybank.mockapp.mockapp.service" />
+      <option name="MAIN_CLASS_NAME" value="com.maybank.mockapp.mockapp.service.AccountServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mockapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.maybank.mockapp.mockapp.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.maybank.mockapp.mockapp.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.maybank.mockapp.mockapp.controller.CustomerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mockapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.maybank.mockapp.mockapp.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.maybank.mockapp.mockapp.service" />
+      <option name="MAIN_CLASS_NAME" value="com.maybank.mockapp.mockapp.service.CustomerServiceIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MockappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="mockapp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.maybank.mockapp.mockapp.MockappApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AccountServiceIntegrationTest" />
+        <item itemvalue="JUnit.CustomerServiceIntegrationTest" />
+        <item itemvalue="JUnit.AccountControllerTest" />
+        <item itemvalue="JUnit.CustomerControllerTest" />
+        <item itemvalue="JUnit.AccountServiceTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f3a08c4-6a27-4f1a-b76a-c5c85f384409" name="Changes" comment="" />
+      <created>1749292514881</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749292514881</updated>
+      <workItem from="1749292516860" duration="8921000" />
+      <workItem from="1749310180820" duration="1673000" />
+      <workItem from="1749312477979" duration="4358000" />
+      <workItem from="1749370229790" duration="12768000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mockapp$AccountServiceTest.ic" NAME="AccountServiceTest Coverage Results" MODIFIED="1749367518255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.maybank.mockapp.mockapp.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/mockapp$AccountControllerTest.ic" NAME="AccountControllerTest Coverage Results" MODIFIED="1749372144018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.maybank.mockapp.mockapp.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/mockapp$CustomerServiceIntegrationTest.ic" NAME="CustomerServiceIntegrationTest Coverage Results" MODIFIED="1749372680813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.maybank.mockapp.mockapp.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/mockapp$AccountServiceIntegrationTest.ic" NAME="AccountServiceIntegrationTest Coverage Results" MODIFIED="1749373214949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.maybank.mockapp.mockapp.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/mockapp$AccountServiceTest_testInquireAccount_Success.ic" NAME="AccountServiceTest.testInquireAccount_Success Coverage Results" MODIFIED="1749367504247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.maybank.mockapp.mockapp.service.*</FILTER>
+    </SUITE>
+  </component>
+</project>

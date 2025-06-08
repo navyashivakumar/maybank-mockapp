@@ -1,0 +1,7 @@
+com\maybank\mockapp\mockapp\MockappApplicationTests.class
+com\maybank\mockapp\mockapp\service\CustomerServiceIntegrationTest.class
+com\maybank\mockapp\mockapp\controller\CustomerControllerTest.class
+com\maybank\mockapp\mockapp\service\AccountServiceTest.class
+com\maybank\mockapp\mockapp\controller\AccountControllerTest.class
+com\maybank\mockapp\mockapp\service\AccountServiceIntegrationTest.class
+com\maybank\mockapp\mockapp\service\CustomerServiceTest.class
