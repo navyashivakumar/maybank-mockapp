@@ -27,7 +27,8 @@ public class AccountService {
     public AccountDTO createAccount(Long customerId, String accountType) throws CustomerNotFoundException {
         logger.info("Creating account for customerId={}, type={}", customerId, accountType);
         Customer customer = customerRepository.findById(customerId)
-                .orElseThrow(() -> { logger.error("Customer with ID {} not found", customerId);
+                .orElseThrow(() -> {
+                    logger.error("Customer with ID {} not found", customerId);
                     return new CustomerNotFoundException(customerId);
                 });
         Account account = new Account();
@@ -38,7 +39,7 @@ public class AccountService {
         return new AccountDTO(account.getAccountNumber(), account.getAccountType(), account.getStatus(), account.getBalance(), customer.getId());
     }
 
-    public AccountDTO depositCash(Long accountNumber, double amount) throws AccountNotFoundException {
+    public AccountDTO depositCash(Long accountNumber, double amount) throws AccountNotFoundException, InvalidTransactionException {
         logger.info("Depositing amount={} to accountNumber={}", amount, accountNumber);
 
         Account account = accountRepository.findByAccountNumber(accountNumber)
@@ -46,9 +47,13 @@ public class AccountService {
                     logger.error("Account with number {} not found for deposit", accountNumber);
                     return new AccountNotFoundException(accountNumber);
                 });
-
-        account.setBalance(account.getBalance() + amount);
-        account = accountRepository.save(account);
+        if (!account.getStatus().equals("Closed")) {
+            account.setBalance(account.getBalance() + amount);
+            account = accountRepository.save(account);
+        }else{
+            logger.warn("Account with number {} is closed", accountNumber);
+            throw new InvalidTransactionException("Account is closed");
+        }
 
         logger.debug("Deposit complete. New balance: {}", account.getBalance());
         return new AccountDTO(account.getAccountNumber(), account.getAccountType(), account.getStatus(), account.getBalance(), account.getCustomer().getId());
@@ -67,9 +72,13 @@ public class AccountService {
             logger.warn("Insufficient balance for accountNumber={}. Available={}, Requested={}", accountNumber, account.getBalance(), amount);
             throw new InvalidTransactionException("Insufficient balance");
         }
-
-        account.setBalance(account.getBalance() - amount);
-        account = accountRepository.save(account);
+        if (!account.getStatus().equals("Closed")) {
+            account.setBalance(account.getBalance() - amount);
+            account = accountRepository.save(account);
+        } else{
+            logger.warn("Account with number {} is closed", accountNumber);
+            throw new InvalidTransactionException("Account is closed");
+        }
 
         logger.debug("Withdrawal successful. Remaining balance: {}", account.getBalance());
         return new AccountDTO(account.getAccountNumber(), account.getAccountType(), account.getStatus(), account.getBalance(), account.getCustomer().getId());

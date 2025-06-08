@@ -36,7 +36,7 @@ public class AccountController {
 
     @PutMapping("/deposit")
     public ResponseEntity<AccountDTO> deposit(@RequestParam Long accountNumber,
-                                              @RequestParam double amount) throws AccountNotFoundException {
+                                              @RequestParam double amount) throws AccountNotFoundException, InvalidTransactionException {
         logger.info("Request to deposit amount {} into account {}", amount, accountNumber);
         AccountDTO account = service.depositCash(accountNumber, amount);
         return ResponseEntity.ok(account);
