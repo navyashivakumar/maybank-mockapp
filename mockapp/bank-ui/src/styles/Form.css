@@ -1,0 +1,79 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    background-color: #fffbea; /* light yellow */
+    border: 1px solid #e0c200; /* yellow border */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: #111; /* deep black text */
+}
+
+/* DARK MODE */
+body.dark .form {
+    background-color: #111111;
+    border-color: #333;
+    color: #ffd700; /* golden yellow text */
+}
+
+/* Input styles */
+.form input {
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s, background-color 0.2s;
+    background-color: white;
+    color: #111;
+}
+
+body.dark .form input {
+    background-color: #222;
+    border-color: #555;
+    color: #ffd700;
+}
+
+/* Button */
+.form button {
+    padding: 10px 14px;
+    background-color: #000; /* black */
+    color: #ffd700; /* yellow text */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.form button:hover {
+    background-color: #333;
+}
+
+/* DARK MODE button hover */
+body.dark .form button:hover {
+    background-color: #ffd700;
+    color: #000;
+}
+
+/* Result display */
+.result {
+    background-color: #fff4cc;
+    border: 1px solid #f2c94c;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #111;
+}
+
+body.dark .result {
+    background-color: #222;
+    border-color: #ffd700;
+    color: #ffd700;
+}
+
+.result p {
+    margin: 6px 0;
+}

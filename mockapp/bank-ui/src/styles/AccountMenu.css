@@ -1,0 +1,89 @@
+.account-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.account-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000000; /* Strong black */
+    color: #ffd700; /* Golden yellow */
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-button:hover {
+    background-color: #333; /* Slightly lighter black */
+}
+
+.dropdown {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fffbea; /* Light yellow */
+    color: #111;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    min-width: 180px;
+    z-index: 1000;
+    overflow: hidden;
+    text-align: center;
+}
+
+body.dark .dropdown {
+    background-color: #1a1a1a;
+    color: #ffd700;
+    border-color: #333;
+}
+
+.dropdown-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    color: #000;
+}
+
+body.dark .dropdown-item {
+    border-bottom: 1px solid #444;
+    color: #ffd700;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: #fff0b3; /* Light hover yellow */
+}
+
+body.dark .dropdown-item:hover {
+    background-color: #333;
+}
+
+.dropdown-item.logout {
+    color: #ff4d4f;
+}
+
+.collapsible-section {
+    margin-bottom: 20px;
+}
+
+.collapsible-header {
+    font-size: 18px;
+    color: #000;
+}
+
+body.dark .collapsible-header {
+    color: #ffd700;
+}
+
+.collapsible-content {
+    padding: 10px 0;
+}
